@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book a Session | Photography Org</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">📸 Jabs Classy Studio & Academy</div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="students.html" class="btn">Meet Our Student's</a>
+    </nav>
+  </header>
+
+  <section class="section hero-section">
+    <h1>Book a Photography Session</h1>
+    <p>Fill out the form below to reserve your session with Jabs Classy Studio.</p>
+
+    <!-- 👇 Image preview section (initially hidden) -->
+    <div id="image-preview" style="display: none; margin-bottom: 1em;">
+      <p><strong>Selected Style:</strong></p>
+      <img id="preview-img" src="" alt="Selected style preview" style="width: 300px; max-width: 100%; border-radius: 10px;" />
+      <input type="hidden" name="selectedImage" id="selectedImage">
+    </div>
+
+    <form id="bookingForm" class="booking-form">
+      <div class="form-group">
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="fullName" name="fullName" placeholder="Micheal Edward" required />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" placeholder="e.g: michealedward@gmail.com" required />
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" placeholder="e.g: 08012345678" required />
+      </div>
+
+      <div class="form-group">
+        <label for="date">Preferred Date:</label>
+        <input type="date" id="date" name="date" required />
+      </div>
+
+      <div class="form-group">
+        <label for="sessionType">Session Type:</label>
+        <select id="sessionType" name="sessionType">
+          <option value="Wedding">Wedding</option>
+          <option value="Travelt">Travelt</option>
+          <option value="Products">Products</option>
+          <option value="Portrait">Portrait</option>
+          <option value="POP/NYSC">POP/NYSC</option>
+          <option value="Landscape">Landscape</option>
+          <option value="Graduation">Graduation</option>
+          <option value="Fashion">Fashion</option>
+          <option value="Events">Events</option>
+          <option value="Engagement">Engagement</option>
+          <option value="Drone">Drone</option>
+          <option value="Documentary">Documentary</option>
+          <option value="Corporate">Corporate</option>
+          <option value="Birthday">Birthday</option>
+          <option value="Baby">Baby</option>
+          <option value="Arewa">Arewa</option>
+          <option value="Architecture">Architecture</option>
+          <option value="Anniversary">Anniversary</option>
+          <option value="Rent Studio">Rent Studios</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="notes">Additional Notes:</label>
+        <textarea id="notes" name="notes" rows="4" placeholder="Enter any additional details or requests"></textarea>
+      </div>
+
+      <div class="form-actions" style="text-align: right;">
+        <button type="submit">Submit Booking</button>
+      </div>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 PhotoCraft. All rights reserved.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js"></script>
+
+  <!-- Firebase Initialization -->
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyC5gtIJntI10EektrECoVNg7iTM2D7VjTs",
+      authDomain: "bookings-d400c.firebaseapp.com",
+      projectId: "bookings-d400c",
+      storageBucket: "bookings-d400c.firebasestorage.app",
+      messagingSenderId: "460455264425",
+      appId: "1:460455264425:web:80f51b0d88091b1d68e9b8",
+      measurementId: "G-L82E2SQYMF"
+    };
+
+    const app = firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore(app);
+  </script>
+
+  
+
+  <!-- Preview image logic -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const params = new URLSearchParams(window.location.search);
+      const sampleImage = params.get("sample");
+
+      const previewContainer = document.getElementById("image-preview");
+      const previewImage = document.getElementById("preview-img");
+      const hiddenInput = document.getElementById("selectedImage");
+
+      if (sampleImage) {
+        const decoded = decodeURIComponent(sampleImage);
+        previewImage.src = decoded;
+        hiddenInput.value = decoded;
+        previewContainer.style.display = "block";
+      }
+    });
+  </script>
+</body>
+</html>
