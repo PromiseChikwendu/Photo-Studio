@@ -20,7 +20,9 @@
   /* Navbar */
   .navbar {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
+    
     align-items: center;
     padding: 1.2rem 2rem;
     background-color: #111;
@@ -43,16 +45,6 @@
     border-radius: 4px;
   }
   
-  .hero p {
-    color: #fff;
-  }
-  
-  .gallery-intro {
-    text-align: center;
-    color: #fff;
-    font-size: 1.2rem;
-    line-height: 1.8;
-  }
 
   .gallery-intro p {
     margin-bottom: 0.1rem; /* Reduced the space between paragraphs */
@@ -73,6 +65,17 @@
     color: #fff;
   }
 
+
+  .hero p {
+    color: #fff;
+  }
+  
+  .gallery-intro {
+    text-align: center;
+    color: #fff;
+    font-size: 1.2rem;
+    line-height: 1.8;
+  }
   .hero h1 {
     overflow: hidden; /* Ensures text stays within bounds */
     white-space: nowrap; /* Prevents text wrapping */
@@ -258,19 +261,22 @@
 }
 
 .overlay-btn {
-  padding: 16px 16px;
-  background-color: rgba(255, 123, 0, 0.9);
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  display: inline-block;
+  background: #ffb300;
+  color: #222;
+  padding: 7px 14px;
+  border-radius: 10px;
+  font-size: 1.1rem;
   font-weight: 500;
-  transition: background-color 0.3s ease;
-  white-space: nowrap; /* Ensures text stays on a single line */
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+  box-shadow: 0 1px 1px rgba(234, 218, 218, 0.08);
+  white-space: nowrap;
 }
 
 .overlay-btn:hover {
-  background-color: #e56b00;
+  background: #e56b00;
+  color: #fff;
 }
 
 /* Booking Form */
@@ -478,10 +484,70 @@
   }
   
   /* Responsive Design */
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
     .navbar {
       flex-direction: column;
       align-items: flex-start;
+      text-align: center;
+    }
+
+    .navbar-menu {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .navbar-menu a
+    .navbar-menu button {
+      margin: 0.5rem 0;
+      width: 100%;
+      text-align: left;
+    }
+    .hamburger {
+      display: block;
+      font-size: 2rem;
+      cursor: pointer;
+      padding: 1rem;
+      color: white;
+      margin: 0 auto;
+      align-self: center;
+      text-align: center;
+    }
+
+    .navbar-menu {
+      display: none;
+      flex-direction: column;
+      background-color: black;
+      padding: 1rem;
+      width: 100%;
+      gap: 1rem;
+    }
+
+    .navbar-menu.show {
+      display: flex;
+    }
+
+    .navbar-menu a,
+    .navbar-menu button {
+      padding: 0.5rem;
+      width: 100%;
+      text-align: left;
+      color: white;
+      border: none;
+      background: none;
+    }
+
+    .navbar-menu button {
+      background-color: orange;
+      color: white;
+      border-radius: 5px;
+    }
+    .navbar-menu .btn {
+      white-space: normal; /* Allow text to wrap */
+    }
+
+    .navbar-menu a {
+      padding: 0.5rem 1rem;
     }
   
     .nav-links a {
