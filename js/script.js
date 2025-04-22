@@ -49,7 +49,13 @@ document.addEventListener("DOMContentLoaded", function () {
     "🌐 Do you have an online training option?": "Currently on-site only, but online options are coming soon!",
     "👋 Hi": "Hello! how can I assist you today?"
   };
-
+  // === Navbar Mobile Menu Toggle ===
+  window.toggleMenu = function () {
+    const menu = document.getElementById('navbarMenu');
+    if (menu) {
+      menu.classList.toggle('show');
+    }
+  };
   document.querySelectorAll(".chat-option").forEach(btn => {
     btn.addEventListener("click", () => {
       const question = btn.textContent.trim();
