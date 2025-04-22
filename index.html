@@ -9,13 +9,19 @@
 <body>
   <header class="navbar">
     <div class="logo">📸 Jabs Classy Studio & Academy</div>
-    <nav class="nav-links">
+    <!-- Hamburger icon -->
+    <div class="hamburger" onclick="toggleMenu()">
+      &#9776;
+    </div>
+
+    <!-- Navbar items -->
+    <nav class="navbar-menu" id="navbarMenu">
       <a href="index.html">Home</a>
       <a href="gallery.html">Gallery</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
-      <a href="students.html" class="btn">Meet Our Student's</a>
-      <a href="booking.html" class="btn">Book a Session</a>
+      <a href="students.html"><button>Meet Our Students</button></a>
+      <a href="booking.html"><button>Book a Session</button></a>
     </nav>
   </header>
 
@@ -26,6 +32,82 @@
       <a href="gallery.html" class="hero-btn">Explore Here</a>
     </div>
   </section>
+  <style>
+
+    
+    .hero {
+      width: 100%;
+      min-height: 350px;
+      background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('../images/bkg.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 20px;
+      box-sizing: border-box;
+    }
+    .hero-content {
+      color: #fff;
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .hero-content h1 {
+      font-size: 2.8rem;
+      margin-bottom: 18px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    .hero-content p {
+      font-size: 1.3rem;
+      margin-bottom: 28px;
+    }
+    .hero-btn {
+      display: inline-block;
+      background: #ffb300;
+      color: #222;
+      padding: 14px 36px;
+      border-radius: 30px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    .hero-btn:hover {
+      background: #222;
+      color: #ffb300;
+    }
+    @media (max-width: 900px) {
+      .hero-content h1 {
+        font-size: 2.1rem;
+      }
+      .hero-content p {
+        font-size: 1.1rem;
+      }
+      .hero {
+        min-height: 250px;
+        padding: 40px 10px;
+      }
+    }
+    @media (max-width: 600px) {
+      .hero {
+        min-height: 180px;
+        padding: 25px 5px;
+      }
+      .hero-content h1 {
+        font-size: 1.3rem;
+      }
+      .hero-content p {
+        font-size: 0.95rem;
+      }
+      .hero-btn {
+        padding: 10px 20px;
+        font-size: 0.95rem;
+      }
+    }
+
+    
+      </style>
 
   <main>
     <section class="hero-sect">
