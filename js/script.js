@@ -199,7 +199,7 @@ document.addEventListener("DOMContentLoaded", function () {
           botMsg.textContent = "You can book a session on our Booking page. Just click 'Book a Session' in the menu!";
         } else if (/academy|student|training|course|learn/i.test(msg)) {
           botMsg.textContent = "Check out our training programs on the About or Students page!";
-        } else if (/hi|hello|whatsup|hey||good evening||good afternoon|good morning/i.test(msg)) {
+        } else if (/hi|hello|whatsup|hey|good evening|good afternoon|good morning/i.test(msg)) {
           botMsg.textContent = "Hello! how can I assist you today?";
         } else if (/price|cost|rate|fee|charge/i.test(msg)) {
           botMsg.textContent = "Our pricing starts at ₦10,000. You can view detailed pricing on the Booking page.";
