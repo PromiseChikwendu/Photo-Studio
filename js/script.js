@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (response === "human-request") {
         addBotMessage("Connecting you to a human agent via WhatsApp. 📱");
         const encoded = encodeURIComponent(`A user wants to speak with a real person:\n\n${question}`);
-        window.open(`https://wa.me/2349028796688?text=${encoded}`, "_blank");
+        window.open(`https://wa.me/2348108978369?text=${encoded}`, "_blank");
       } else {
         addBotMessage(response || "Sorry, I don't have a response for that yet. Try another option.");
       }
