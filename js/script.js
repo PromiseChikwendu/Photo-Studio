@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (response === "human-request") {
         addBotMessage("Connecting you to a human agent via WhatsApp. 📱");
         const encoded = encodeURIComponent(`A user wants to speak with a real person:\n\n${question}`);
-        window.open(`https://wa.me/2349028796688?text=${encoded}`, "_blank");
+        window.open(`https://wa.me/2348108978369?text=${encoded}`, "_blank");
       } else {
         addBotMessage(response || "Sorry, I don't have a response for that yet. Try another option.");
       }
@@ -152,7 +152,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       const encodedMessage = encodeURIComponent(message);
-      const whatsappURL = `https://wa.me/2349028796688?text=${encodedMessage}`;
+      const whatsappURL = `https://wa.me/2348108978369?text=${encodedMessage}`;
       window.open(whatsappURL, "_blank");
     });
   }
@@ -223,7 +223,7 @@ document.addEventListener("DOMContentLoaded", function () {
         } else if (/event|wedding|birthday|occasion/i.test(msg)) {
           botMsg.textContent = "We cover weddings, birthdays, and all special events. Let's help you capture the moment!";
         } else if (/whatsapp|chat/i.test(msg)) {
-          botMsg.textContent = "You can reach us on WhatsApp here: https://wa.me/2349028796688";
+          botMsg.textContent = "You can reach us on WhatsApp here: https://wa.me/2348108978369";
         } else if (/admin|dashboard|login/i.test(msg)) {
           botMsg.textContent = "If you're an admin, please log in using the Admin Login page.";
         } else if (/gallery|pictures|images/i.test(msg)) {
