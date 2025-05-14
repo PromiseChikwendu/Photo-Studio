@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (response === "human-request") {
         addBotMessage("Connecting you to a human agent via WhatsApp. 📱");
         const encoded = encodeURIComponent(`A user wants to speak with a real person:\n\n${question}`);
-        window.open(`https://wa.me/2348108978369?text=${encoded}`, "_blank");
+        window.open(`https://wa.me/2349028796688?text=${encoded}`, "_blank");
       } else {
         addBotMessage(response || "Sorry, I don't have a response for that yet. Try another option.");
       }
@@ -152,7 +152,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       const encodedMessage = encodeURIComponent(message);
-      const whatsappURL = `https://wa.me/2349028796688?text=${encodedMessage}`;
+      const whatsappURL = `https://wa.me/2348108978369?text=${encodedMessage}`;
       window.open(whatsappURL, "_blank");
     });
   }
@@ -212,7 +212,7 @@ document.addEventListener("DOMContentLoaded", function () {
         } else if (/help|human|real person|jabs|somebody|someone|the photographer|photographer|support/i.test(msg)) {
           botMsg.textContent = "Connecting you to a human via WhatsApp...";
           const encoded = encodeURIComponent("A user wants to speak with a real person:\n\n" + msg);
-          const whatsappURL = `https://wa.me/2349028796688?text=${encoded}`;
+          const whatsappURL = `https://wa.me/2348108978369?text=${encoded}`;
           setTimeout(() => {
             window.open(whatsappURL, "_blank");
           }, 10000); // 10 seconds delay
